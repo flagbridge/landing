@@ -4,13 +4,13 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "FlagBridge — Feature Flags with Product Intelligence",
+  title: "FlagBridge — Ship Features, Not Invoices",
   description:
-    "Open-source feature flag platform with product intelligence, plugin ecosystem, and OpenFeature support. Self-hosted or cloud.",
+    "Open-source feature flag management with a native Testing API. Self-host forever free or upgrade to Pro for $29/mo.",
   openGraph: {
-    title: "FlagBridge — Feature Flags with Product Intelligence",
+    title: "FlagBridge — Ship Features, Not Invoices",
     description:
-      "Open-source feature flag management with product intelligence. Ship features safely and understand their impact.",
+      "Open-source feature flag management with a native Testing API. Self-host forever free or upgrade to Pro for $29/mo.",
     url: "https://flagbridge.io",
   },
 };
@@ -69,15 +69,15 @@ function Hero() {
           <div className="mb-16 flex flex-wrap justify-center gap-8 text-sm text-[#94A3B8]">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-[#3B82F6]" />
-              <span>100% Open Source</span>
+              <span>Apache 2.0 Licensed</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-[#3B82F6]" />
-              <span>Self-hosted or Cloud</span>
+              <span>Self-hosted Forever Free</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-[#3B82F6]" />
-              <span>Enterprise Ready</span>
+              <span>Native Testing API</span>
             </div>
           </div>
         </div>
@@ -237,7 +237,7 @@ function Pricing() {
       license: t("communityLicense"),
       features: Array.from({ length: 6 }, (_, i) => t(`communityFeatures.${i}`)),
       cta: "Deploy Now",
-      highlighted: false,
+      highlighted: true,
     },
     {
       name: t("pro"),
@@ -246,7 +246,7 @@ function Pricing() {
       period: "/month",
       features: Array.from({ length: 6 }, (_, i) => t(`proFeatures.${i}`)),
       cta: "Start Free Trial",
-      highlighted: true,
+      highlighted: false,
     },
     {
       name: t("enterprise"),
@@ -501,8 +501,8 @@ export default function Home() {
     <main className="min-h-screen bg-[#0F172A]">
       <Header />
       <Hero />
-      <Features />
       <Pricing />
+      <Features />
       <Comparison />
       <TechStack />
       <CtaSection />

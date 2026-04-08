@@ -7,12 +7,12 @@
     "getStarted": "Get Started"
   },
   "hero": {
-    "badge": "Open Source Feature Flag Management",
-    "titlePart1": "Ship Features with ",
-    "titleHighlight": "Confidence",
-    "description": "Open-source feature flag platform built for modern development teams. Control rollouts, run experiments, and manage features across your entire stack.",
-    "cta": "Get Started Free",
-    "learnMore": "View on GitHub",
+    "badge": "Open Source · Apache 2.0",
+    "titlePart1": "Ship features. ",
+    "titleHighlight": "Not invoices.",
+    "description": "Feature flags that developers actually own. Flat $29/mo for Pro — or self-host forever free. The only platform with a native Testing API for isolated E2E tests.",
+    "cta": "Self-host in 5 minutes",
+    "learnMore": "Star on GitHub",
     "terminalComment": "# API at :8080 · Admin UI at :3000"
   },
   "features": {
@@ -55,20 +55,20 @@
   "openCore": {
     "title": "Simple, transparent pricing",
     "subtitle": "Start free with open source. Scale with cloud. Enterprise when you need it.",
-    "community": "Open Source",
-    "communitySubtitle": "Self-host on your own infrastructure",
+    "community": "Community Edition",
+    "communitySubtitle": "Self-host forever free",
     "communityPrice": "Free",
     "communityLicense": "Apache 2.0",
     "communityFeatures": ["Unlimited feature flags", "Unlimited environments", "Unlimited team members", "All SDK support", "Community support", "Self-hosted deployment"],
-    "pro": "Cloud",
-    "proSubtitle": "Fully managed cloud hosting",
+    "pro": "Pro",
+    "proSubtitle": "Self-hosted with premium features",
     "proPrice": "$29",
-    "proIncludes": "Everything in Open Source, plus",
+    "proIncludes": "Everything in Community Edition, plus",
     "proFeatures": ["Managed infrastructure", "Automatic updates", "99.9% uptime SLA", "Email support", "Advanced analytics", "Priority support"],
     "enterprise": "Enterprise",
-    "enterpriseSubtitle": "For large-scale deployments",
+    "enterpriseSubtitle": "For teams that need more",
     "enterprisePrice": "Custom",
-    "enterpriseIncludes": "Everything in Cloud, plus",
+    "enterpriseIncludes": "Everything in Pro, plus",
     "enterpriseFeatures": ["SSO & SAML", "Custom SLA", "Dedicated support", "Training & onboarding", "Custom integrations", "Audit log export"]
   },
   "techStack": {
