@@ -345,23 +345,23 @@ function Pricing() {
 const comparisonKeys = [
   "openSourceCore",
   "selfHosted",
-  "productContextCards",
+  "nativeTestingApi",
+  "dualModeSdk",
+  "sseStreaming",
   "pluginEcosystem",
-  "lifecycleAutomation",
   "openfeatureProvider",
-  "messagingIntegrations",
-  "eventAnalyticsBridge",
+  "flatRatePricing",
 ] as const;
 
-const comparisonData: Record<string, { fb: boolean; unleash: boolean; ld: boolean; flagsmith: boolean }> = {
-  openSourceCore:        { fb: true,  unleash: true,  ld: false, flagsmith: true  },
-  selfHosted:            { fb: true,  unleash: true,  ld: false, flagsmith: true  },
-  productContextCards:   { fb: true,  unleash: false, ld: false, flagsmith: false },
-  pluginEcosystem:       { fb: true,  unleash: false, ld: false, flagsmith: false },
-  lifecycleAutomation:   { fb: true,  unleash: false, ld: false, flagsmith: false },
-  openfeatureProvider:   { fb: true,  unleash: true,  ld: true,  flagsmith: true  },
-  messagingIntegrations: { fb: true,  unleash: false, ld: false, flagsmith: false },
-  eventAnalyticsBridge:  { fb: true,  unleash: false, ld: false, flagsmith: false },
+const comparisonData: Record<string, { fb: boolean; gb: boolean; unleash: boolean; ld: boolean; flagsmith: boolean }> = {
+  openSourceCore:      { fb: true,  gb: true,  unleash: true,  ld: false, flagsmith: true  },
+  selfHosted:          { fb: true,  gb: true,  unleash: true,  ld: false, flagsmith: true  },
+  nativeTestingApi:    { fb: true,  gb: false, unleash: false, ld: false, flagsmith: false },
+  dualModeSdk:         { fb: true,  gb: false, unleash: false, ld: false, flagsmith: false },
+  sseStreaming:        { fb: true,  gb: false, unleash: false, ld: true,  flagsmith: false },
+  pluginEcosystem:     { fb: true,  gb: false, unleash: false, ld: false, flagsmith: false },
+  openfeatureProvider: { fb: true,  gb: false, unleash: true,  ld: true,  flagsmith: true  },
+  flatRatePricing:     { fb: true,  gb: true,  unleash: false, ld: false, flagsmith: false },
 };
 
 function BoolCell({ value, highlight = false }: { value: boolean; highlight?: boolean }) {
@@ -388,6 +388,7 @@ function Comparison() {
                 <tr className="bg-[#111827] text-left text-xs uppercase tracking-wide text-[#94A3B8]">
                   <th className="px-6 py-4 font-medium">{t("feature")}</th>
                   <th className="px-6 py-4 font-medium text-[#3B82F6]">FlagBridge</th>
+                  <th className="px-6 py-4 font-medium">GrowthBook</th>
                   <th className="px-6 py-4 font-medium">Unleash</th>
                   <th className="px-6 py-4 font-medium">LaunchDarkly</th>
                   <th className="px-6 py-4 font-medium">Flagsmith</th>
@@ -400,6 +401,7 @@ function Comparison() {
                     <tr key={key} className="border-b border-[#1E293B] transition-colors hover:bg-[#253548]">
                       <td className="px-6 py-4 text-[#E2E8F0]">{t(key)}</td>
                       <td className="px-6 py-4"><BoolCell value={row.fb} highlight /></td>
+                      <td className="px-6 py-4"><BoolCell value={row.gb} /></td>
                       <td className="px-6 py-4"><BoolCell value={row.unleash} /></td>
                       <td className="px-6 py-4"><BoolCell value={row.ld} /></td>
                       <td className="px-6 py-4"><BoolCell value={row.flagsmith} /></td>
@@ -409,6 +411,7 @@ function Comparison() {
                 <tr className="border-b border-[#1E293B] transition-colors hover:bg-[#253548]">
                   <td className="px-6 py-4 text-[#E2E8F0]">{t("startingPrice")}</td>
                   <td className="px-6 py-4 font-bold text-[#22C55E]">{t("free")}</td>
+                  <td className="px-6 py-4 text-[#94A3B8]">{t("free")}</td>
                   <td className="px-6 py-4 text-[#94A3B8]">$80/mo</td>
                   <td className="px-6 py-4 text-[#94A3B8]">$120/mo+</td>
                   <td className="px-6 py-4 text-[#94A3B8]">$45/mo</td>
