@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 
@@ -33,6 +34,13 @@ function XIcon() {
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = useTranslations("nav");
+  const pathname = usePathname();
+
+  const isHome = pathname === "/" || pathname === "/en" || /^\/[a-z]{2}(-[a-z]+)?$/.test(pathname);
+  const isActive = (href: string) => pathname.startsWith(href);
+  const navClass = (href: string) =>
+    `text-sm transition-colors ${isActive(href) ? "text-white font-medium" : "text-[#94A3B8] hover:text-white"}`;
+  const pricingHref = isHome ? "#pricing" : "/#pricing";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 h-16 border-b border-[#1E293B] bg-[#0F172A]/80 backdrop-blur">
@@ -49,13 +57,13 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
-          <Link href="/developers" className="text-sm text-[#94A3B8] transition-colors hover:text-white">
+          <Link href="/developers" className={navClass("/developers")}>
             {t("developers")}
           </Link>
-          <Link href="/marketplace" className="text-sm text-[#94A3B8] transition-colors hover:text-white">
+          <Link href="/marketplace" className={navClass("/marketplace")}>
             {t("marketplace")}
           </Link>
-          <a href="#pricing" className="text-sm text-[#94A3B8] transition-colors hover:text-white">
+          <a href={pricingHref} className="text-sm text-[#94A3B8] transition-colors hover:text-white">
             {t("pricing")}
           </a>
           <a href="https://docs.flagbridge.io" className="text-sm text-[#94A3B8] transition-colors hover:text-white">
@@ -91,19 +99,19 @@ export function Header() {
           <div className="flex flex-col gap-4">
             <Link
               href="/developers"
-              className="text-[#94A3B8] transition-colors hover:text-white"
+              className={`transition-colors ${isActive("/developers") ? "text-white font-medium" : "text-[#94A3B8] hover:text-white"}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("developers")}
             </Link>
             <Link
               href="/marketplace"
-              className="text-[#94A3B8] transition-colors hover:text-white"
+              className={`transition-colors ${isActive("/marketplace") ? "text-white font-medium" : "text-[#94A3B8] hover:text-white"}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t("marketplace")}
             </Link>
-            <a href="#pricing" className="text-[#94A3B8] transition-colors hover:text-white">
+            <a href={pricingHref} className="text-[#94A3B8] transition-colors hover:text-white" onClick={() => setMobileMenuOpen(false)}>
               {t("pricing")}
             </a>
             <a href="https://docs.flagbridge.io" className="text-[#94A3B8] transition-colors hover:text-white">
