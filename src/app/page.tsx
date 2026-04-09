@@ -428,12 +428,11 @@ function TechStack() {
 
   const techs = [
     { name: "Go", desc: "API Server" },
-    { name: "Next.js 15", desc: "Admin UI" },
+    { name: "Next.js", desc: "Admin UI" },
     { name: "PostgreSQL", desc: "Database" },
-    { name: "Redis", desc: "Cache & Pub/Sub" },
     { name: "TypeScript", desc: "SDKs" },
-    { name: "Docker", desc: "Deployment" },
-    { name: "Kubernetes", desc: "Helm Charts" },
+    { name: "Docker", desc: "Self-hosted" },
+    { name: "SSE", desc: "Real-time Updates" },
     { name: "OpenFeature", desc: "Standard" },
   ];
 
